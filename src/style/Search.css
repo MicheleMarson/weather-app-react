@@ -1,0 +1,36 @@
+.search{
+  z-index: 7;
+  background: #262732;
+  height: calc(100vh - 119px);
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.search__input{
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  width: 250px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+
+::placeholder{
+  color: rgba(255, 255, 255, 0.199);
+}
+
+/* -----------------display---------------- */
+.search.hide{
+  bottom: 1000%;
+}

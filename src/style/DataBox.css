@@ -1,0 +1,55 @@
+.display__title{
+  text-align: center;
+  padding-bottom: 50px;
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px black;
+}
+
+.display{
+  padding: 50px 0;
+}
+
+.dataBox{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dataBox__info{
+  display: flex;
+  background: #262732;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dataBox__info p{
+  padding: 0 20px;
+}
+
+
+.dataBox:not(:last-child){
+  margin-bottom: 6px;
+}
+
+.dataBox__iconBox{
+  cursor: pointer;
+  background: #1A1B23;
+  padding: 10px;
+  padding: 30px;
+}
+
+.dataBox__moreInfo{
+  display: none;
+  grid-template-columns: repeat(2, 50%);
+  background: #3F404B;
+  padding: 20px;
+  display: none;
+}
+
+.dataBox__moreInfo p{
+  padding: 10px 0;
+}
+
+.dataBox__moreInfo.show{
+  display: grid;
+}
