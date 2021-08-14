@@ -12,8 +12,8 @@
 }
 
 .display{
-  padding-top: 119px;
-  padding-bottom:20px;
+  /* padding:119px 16px 20px 16px; */
+  padding:20px 16px ;
 }
 
 .dataBox{

@@ -13,8 +13,6 @@ const Display = () => {
     )
   }
 
-  console.log(state.data);
-
   if(state.status === "loaded"){
     return(
       <>{state.data.list && !state.searching ? (

@@ -1,15 +1,13 @@
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import "../style/DataBox.css"
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { MyContext } from './ContextProvider';
+// import {} from "../style/DataBox"
 
 const DataBox = ({item}) => {
   const [showMore, setShowMore] = useState(false)
   const {dt_txt, main, weather, wind} = item
   const month = dt_txt.split(" ")[0].split("-")
   const hours = dt_txt.split(" ")[1].split(":")
-  const [state] = useContext(MyContext)
-  console.log(state);
 
   return (
     <div className="dataBox">

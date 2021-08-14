@@ -3,7 +3,7 @@
   font-size: 1.6rem;
   text-align: center;
   background: #262732;
-  position: fixed;
+  position: relative;
   width:100%;
   padding: 20px;
 }

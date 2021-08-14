@@ -28,8 +28,6 @@ const Search = () => {
     fetchData(url)
   }
 
-  console.log(state.data);
-
   return (
     <section className={`search ${state.searching ? "" : "hide"}`}>
       <div className="search__content">

@@ -8,11 +8,11 @@ import Display from "./components/Display";
 function App() {
   return (
     <ContextProvider>
-      <div className="app">
+      <>
         <Title/>
         <Search/>
         <Display/>
-      </div>
+      </>
     </ContextProvider>
   );
 }
