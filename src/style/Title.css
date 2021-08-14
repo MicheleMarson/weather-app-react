@@ -3,8 +3,9 @@
   font-size: 1.6rem;
   text-align: center;
   background: #262732;
-  position: relative;
-  padding: 40px;
+  position: fixed;
+  width:100%;
+  padding: 20px;
 }
 
 .title__icon{
@@ -14,9 +15,14 @@
   right: 60px;
   height: 20px;
   cursor: pointer;
+  z-index:10;
 }
 
 .title__icon.hide{
   display: none;
 }
-
+@media (max-width:375px){
+  .title{
+    font-size:1rem;
+  }
+}

@@ -6,7 +6,7 @@ import { MyContext } from './ContextProvider';
 const DataBox = ({item}) => {
   const [showMore, setShowMore] = useState(false)
   const {dt_txt, main, weather, wind} = item
-  const month = dt_txt.split(" ")[0].split("-").join("/")
+  const month = dt_txt.split(" ")[0].split("-")
   const hours = dt_txt.split(" ")[1].split(":")
   const [state] = useContext(MyContext)
   console.log(state);
@@ -14,7 +14,7 @@ const DataBox = ({item}) => {
   return (
     <div className="dataBox">
       <div className="dataBox__info">
-        <p className="dataBox__time">{month} - {hours[0]}:{hours[1]}</p>
+        <p className="dataBox__time">{month[1]}/{month[2]} - {hours[0]}:{hours[1]}</p>
         <p className="dataBox__temp">{Math.round(main.temp)}°C</p>
         <img className="dataBox__icon" src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} alt="icon"/>
         <div 

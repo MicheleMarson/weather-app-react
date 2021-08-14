@@ -7,7 +7,7 @@ import { MyContext } from './ContextProvider'
 
 const Search = () => {
   const [state, setState] = useContext(MyContext)
-  const [popup, setPop] = useState(false) //toggle popup
+  const [pop, setPop] = useState(false)
   
   const fetchData =async (url) => {
     const response = await fetch(url)
@@ -44,7 +44,7 @@ const Search = () => {
             }}
           />
         {
-          popup ? (<p className="pop">Please Enter City Name!</p>) : null
+          pop ? (<p className="pop">Please Enter City Name!</p>) : null
         }
         </form>
       </div>

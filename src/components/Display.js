@@ -13,13 +13,15 @@ const Display = () => {
     )
   }
 
+  console.log(state.data);
+
   if(state.status === "loaded"){
     return(
-      <>{state.data.list ? (
+      <>{state.data.list && !state.searching ? (
         <div className="display">
           <h2 className="display__title">{state.input + ", " + state.data.city.country}</h2>
-            {state.data?.list.slice(0, 6).map((item, index) => (
-              <DataBox key={i} item={item} index={index}/>
+            {state.data?.list.slice(0, 8).map((item, index) => (
+              <DataBox key={index} item={item} index={index}/>
             ))}
         </div>
       ):(<h2 className="display__notFound">City not found</h2>)}     

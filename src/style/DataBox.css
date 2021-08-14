@@ -1,6 +1,6 @@
 .display__title{
   text-align: center;
-  padding-bottom: 50px;
+  padding: 50px 0;
   text-transform: capitalize;
   font-size: 1.6rem;
   text-shadow: 2px 2px black;
@@ -12,7 +12,8 @@
 }
 
 .display{
-  padding: 50px 0;
+  padding-top: 119px;
+  padding-bottom:20px;
 }
 
 .dataBox{
@@ -39,7 +40,6 @@
 .dataBox__iconBox{
   cursor: pointer;
   background: #1A1B23;
-  padding: 10px;
   padding: 30px;
 }
 
