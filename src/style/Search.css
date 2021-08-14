@@ -2,11 +2,20 @@
   z-index: 7;
   background: #262732;
   height: calc(100vh - 119px);
-  position: absolute;
+  position: fixed;
   /* top: 0; */
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.pop{
+  color: rgb(201, 73, 73);
+  z-index: 2;
+  top: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .search__input{

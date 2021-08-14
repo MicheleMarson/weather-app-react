@@ -5,7 +5,7 @@ export const MyContext = createContext()
 
 const ContextProvider = ({children}) => {
   const [state, setState] = useState({
-    search:true,
+    searching:true,
     input:"",
     data:[],
     status:"loading"

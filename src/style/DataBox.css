@@ -6,6 +6,11 @@
   text-shadow: 2px 2px black;
 }
 
+.display__notFound{
+  text-align: center;
+  padding-top: 6rem;
+}
+
 .display{
   padding: 50px 0;
 }
@@ -52,4 +57,34 @@
 
 .dataBox__moreInfo.show{
   display: grid;
+}
+
+.dataBox__arrow.flip{
+  transform: rotate(180deg);
+  animation: flip .4s ease-in 1;
+}
+
+.dataBox__iconBox:hover > .dataBox__arrow.unflip{
+  animation: down .6s ease;
+}
+
+@keyframes flip {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes down {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(6px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }

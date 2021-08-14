@@ -11,9 +11,9 @@ const Title = () => {
     <header className="title">
       <h1>Weather App</h1>
       <SearchIcon 
-        onClick={() => setState({...state, search:true})} 
+        onClick={() => setState({...state, searching:true})} 
         fontSize="large" 
-        className={`title__icon ${state.search ? "hide" : ""}`}
+        className={`title__icon ${state.searching ? "hide" : ""}`}
       />
     </header>
   )
