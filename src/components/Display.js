@@ -18,8 +18,8 @@ const Display = () => {
       <>{state.data.list ? (
         <div className="display">
           <h2 className="display__title">{state.input + ", " + state.data.city.country}</h2>
-            {state.data?.list.slice(0, 6).map((item, i) => (
-              <DataBox key={i} item={item} />
+            {state.data?.list.slice(0, 6).map((item, index) => (
+              <DataBox key={i} item={item} index={index}/>
             ))}
         </div>
       ):(<h2 className="display__notFound">City not found</h2>)}     
