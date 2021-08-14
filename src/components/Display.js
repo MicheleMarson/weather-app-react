@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { MyContext } from './ContextProvider'
 import DataBox from './DataBox'
+import styled from "styled-components"
 
 
 const Display = () => {
@@ -13,19 +14,45 @@ const Display = () => {
     )
   }
 
+  if(!state.data.list){
+    return (
+      <NotFound>City not found</NotFound>
+    )
+  }
+
   if(state.status === "loaded"){
     return(
-      <>{state.data.list && !state.searching ? (
-        <div className="display">
+      <>{!state.searching && (
+        <Container>
           <h2 className="display__title">{state.input + ", " + state.data.city.country}</h2>
             {state.data?.list.slice(0, 8).map((item, index) => (
-              <DataBox key={index} item={item} index={index}/>
+              <DataBox key={index} item={item}/>
             ))}
-        </div>
-      ):(<h2 className="display__notFound">City not found</h2>)}     
+        </Container>
+      )}
       </>
     )
   }
 }
 
 export default Display
+
+// ------------------------------style---------------------------
+const Container = styled.section`
+  padding: 20px 16px;
+
+  .display__title{
+    text-align: center;
+    padding: 50px 0;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 3px black;
+  }
+`
+
+const NotFound = styled.h2`
+  text-align: center;
+  padding-top: 6rem;
+`
+// ------------------------------style---------------------------
+

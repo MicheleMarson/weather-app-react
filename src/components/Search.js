@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
-import "../style/Search.css"
 import { MyContext } from './ContextProvider'
-// https://api.openweathermap.org/data/2.5/forecast?q=London&appid=c933bac99e074c3df1427010c63af3ef
-// icons : http://openweathermap.org/img/wn/10d@2x.png  _> change 10d 
+import styled, { css } from "styled-components"
 
 const Search = () => {
   const [state, setState] = useContext(MyContext)
@@ -17,8 +15,11 @@ const Search = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault()
-    let url 
+    let url
     //if input is empty , show alert popup
+    if(!state.data){
+      setState({...state, status:"error"})
+    }
     if(!state.input){ 
       setPop(true)
     }else{
@@ -29,8 +30,8 @@ const Search = () => {
   }
 
   return (
-    <section className={`search ${state.searching ? "" : "hide"}`}>
-      <div className="search__content">
+    <Container state={state}>
+      <SearchContent>
         <form onSubmit={(e) => handelSubmit(e)}> 
           <input
             value={state.input}
@@ -42,12 +43,72 @@ const Search = () => {
             }}
           />
         {
-          pop ? (<p className="pop">Please Enter City Name!</p>) : null
+          pop ? (<Pop>Please Enter City Name!</Pop>) : null
         }
         </form>
-      </div>
-    </section>
+      </SearchContent>
+    </Container>
   )
 }
 
 export default Search
+
+// ------------------------------style---------------------------
+const Container = styled.section`
+  z-index: 7;
+  background: #262732;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  ::placeholder{
+    color: rgba(255, 255, 255, 0.199);
+  }
+
+  ${props => props.state.searching ? css`
+    bottom: 0px;
+  `: css`
+    transition:bottom 1s ;
+    bottom:1100%; 
+
+    input{
+      display: none;
+    }
+  `}
+`
+
+const SearchContent = styled.div`
+  height: 100%;
+  width: 100%;
+
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .search__input{
+    position: relative;
+    background: transparent;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+    color: #fff;
+  }
+`
+
+const Pop = styled.p`
+  color: rgb(255, 108, 71);
+  z-index: 2;
+  top: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+// ------------------------------style---------------------------
